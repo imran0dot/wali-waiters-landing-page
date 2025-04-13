@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { socials } from '../constants';
 
 import styles from '../styles';
@@ -30,12 +31,12 @@ const Footer = () => (
             vision. Now it’s time to bring your ideas to life.
           </motion.p>
         </div>
-        <button
+        <Link href="https://calendly.com/wali-waiters/30mincall?month=2025-04"
           type="button"
           className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px]"
         >
           <span className="font-normal text-[16px] text-white">Schedule Your Free Strategy Call Now!</span>
-        </button>
+        </Link>
       </div>
 
       <div className="flex flex-col">

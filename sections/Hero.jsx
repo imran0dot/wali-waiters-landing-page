@@ -35,14 +35,9 @@ const Hero = () => (
           variants={textVariant(1.4)}
           className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
-          <Link href="#get-started">
+          <Link href="https://calendly.com/wali-waiters/30mincall?month=2025-04">
             <div className="bg-indigo-500 text-white px-6 py-3 rounded-2xl font-medium hover:bg-indigo-600 transition">
               Booking Now
-            </div>
-          </Link>
-          <Link href="#learn-more">
-            <div className="border border-indigo-500 text-indigo-300 px-6 py-3 rounded-2xl font-medium hover:bg-indigo-500 hover:text-white transition">
-              Learn More
             </div>
           </Link>
         </motion.div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 
+import Link from 'next/link';
 import styles from '../styles';
 import { TitleText } from '../components';
 import {
@@ -49,7 +50,8 @@ const WhatsNew = () => (
           variants={textVariant(1.8)}
           className="mt-6 text-lg text-gray-300 max-w-xl mx-auto lg:mx-0"
         >
-          I’ve helped clients secure funding, grow influence, and land game-changing media opportunities. Now, it's your turn.
+          I’ve helped clients secure funding, grow influence, and land
+          game-changing media opportunities. Now, it's your turn.
         </motion.p>
 
         <motion.h2
@@ -60,14 +62,14 @@ const WhatsNew = () => (
         >
           Book Your FREE 30-Minute Strategy Call
         </motion.h2>
-        <button
-          type="button"
+        <Link
+          href="https://calendly.com/wali-waiters/30mincall?month=2025-04"
           className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px] mt-5"
         >
           <span className="font-normal text-[16px] text-white">
             Schedule Your Free Strategy Call Now!
           </span>
-        </button>
+        </Link>
       </motion.div>
 
       <motion.div
