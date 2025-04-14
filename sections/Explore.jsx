@@ -19,7 +19,7 @@ const Explore = () => (
         className="relative flex-1"
       >
         <img
-          src="/cover.png"
+          src="/about.jpeg"
           alt="cover"
           className="w-full h-auto object-cover rounded-3xl relative z-10 shadow-2xl"
         />
