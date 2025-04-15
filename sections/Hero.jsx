@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styles from '../styles';
 import { slideIn, staggerContainer, textVariant } from '../utils/motion';
+import { socials } from '../constants';
 
 const Hero = () => (
   <section className={`${styles.yPaddings} sm:px-16 px-6`}>
@@ -20,7 +21,8 @@ const Hero = () => (
           variants={textVariant(1.1)}
           className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white"
         >
-          Turn Your <span className="text-indigo-400">Influence</span><br />
+          Turn Your <span className="text-indigo-400">Influence</span>
+          <br />
           Into <span className="text-indigo-400">Income</span> & Business Growth
         </motion.h1>
 
@@ -28,11 +30,24 @@ const Hero = () => (
           variants={textVariant(1.3)}
           className="mt-6 text-lg text-gray-300 max-w-xl mx-auto lg:mx-0"
         >
-          Ready to Monetize Your Brand, Scale Your Business & Secure High-Paying Opportunities?
+          Ready to Monetize Your Brand, Scale Your Business & Secure High-Paying
+          Opportunities?
         </motion.p>
-
+        <motion.div variants={textVariant(1.4)}>
+          <div className="flex gap-4 mt-5">
+            {socials.map((social) => (
+              <Link target="_blank" key={social.name} href={social.link}>
+                <img
+                  src={social.url}
+                  alt={social.name}
+                  className="w-[24px] h-[24px] object-contain"
+                />
+              </Link>
+            ))}
+          </div>
+        </motion.div>
         <motion.div
-          variants={textVariant(1.4)}
+          variants={textVariant(1.5)}
           className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
           <Link href="https://calendly.com/wali-waiters/30mincall?month=2025-04">
@@ -49,7 +64,7 @@ const Hero = () => (
         className="relative flex-1"
       >
         <img
-          src="/hero.jpeg"
+          src="/top-section.png"
           alt="cover"
           className="w-full h-auto object-cover rounded-3xl relative z-10 shadow-2xl"
         />
