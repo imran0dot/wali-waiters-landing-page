@@ -25,10 +25,7 @@ const Footer = () => (
             variants={textVariant(1.3)}
             className="mt-6 text-lg text-gray-300 max-w-xl mx-auto lg:mx-0"
           >
-            With over three decades of experience in TV production, business
-            strategy, and media coaching, I’ve helped countless entrepreneurs
-            launch shows, secure funding, master marketing, and scale their
-            vision. Now it’s time to bring your ideas to life.
+            As a seasoned <strong>business consultant, executive producer, and author,</strong> I’ve helped countless small business owners, creators, and changemakers raise capital, scale their operations, and bring bold ideas to life—from consulting businesses to film and television projects.
           </motion.p>
         </div>
         <Link href="https://calendly.com/wali-waiters/30mincall?month=2025-04"

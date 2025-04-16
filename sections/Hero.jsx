@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styles from '../styles';
 import { slideIn, staggerContainer, textVariant } from '../utils/motion';
-import { socials } from '../constants';
 
 const Hero = () => (
   <section className={`${styles.yPaddings} sm:px-16 px-6`}>
@@ -33,19 +32,7 @@ const Hero = () => (
           Ready to Monetize Your Brand, Scale Your Business & Secure High-Paying
           Opportunities?
         </motion.p>
-        <motion.div variants={textVariant(1.4)}>
-          <div className="flex gap-4 mt-5">
-            {socials.map((social) => (
-              <Link target="_blank" key={social.name} href={social.link}>
-                <img
-                  src={social.url}
-                  alt={social.name}
-                  className="w-[24px] h-[24px] object-contain"
-                />
-              </Link>
-            ))}
-          </div>
-        </motion.div>
+
         <motion.div
           variants={textVariant(1.5)}
           className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
