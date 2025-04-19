@@ -42,11 +42,6 @@ const Hero = () => (
               Booking Now
             </div>
           </Link>
-          <Link target="_blank" href="/5_strategies_to_monetize.pdf">
-            <div className="bg-indigo-500 text-white px-6 py-3 rounded-2xl font-medium hover:bg-indigo-600 transition">
-              Booking Now
-            </div>
-          </Link>
         </motion.div>
       </div>
 
