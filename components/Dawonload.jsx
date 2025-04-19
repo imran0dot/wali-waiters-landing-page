@@ -29,18 +29,11 @@ const Download = () => (
 
         <div className="flex gap-3 justify-center">
           <a
-            href="/5_strategies_to_monetize.pdf"
-            target="_blank"
-            className="inline-block mt-2 px-6 py-3 bg-[#25618B] text-white rounded-full hover:bg-[#1d4e6b] transition cursor-pointer z-50 "
-          >
-            👉 Download the Free Guide
-          </a>
-          <a
             href="/strategies_to_monetize_2.pdf"
             target="_blank"
             className="inline-block mt-2 px-6 py-3 bg-[#25618B] text-white rounded-full hover:bg-[#1d4e6b] transition cursor-pointer z-50"
           >
-            👉 Download the Free Guide 2
+            👉 Download the Free Guide
           </a>
         </div>
       </div>
