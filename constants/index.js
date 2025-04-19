@@ -75,7 +75,12 @@ export const socials = [
   {
     name: 'facebook',
     url: '/facebook.svg',
-    link: 'https://www.facebook.com/walkwithwali',
+    link: 'https://www.facebook.com/wali.waiters',
+  },
+  {
+    name: 'instagram',
+    url: '/instagram.svg',
+    link: 'https://www.instagram.com/waliwaiters_consciouscreator/profilecard',
   },
   {
     name: 'linkedin',

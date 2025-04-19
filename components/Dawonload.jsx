@@ -1,0 +1,53 @@
+// ...imports remain unchanged
+
+'use client';
+
+import { motion } from 'framer-motion';
+import styles from '../styles';
+import { footerVariants } from '../utils/motion';
+
+const Download = () => (
+  <motion.div
+    variants={footerVariants}
+    initial="hidden"
+    whileInView="show"
+    className={`${styles.xPaddings} py-8 relative`}
+  >
+    <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
+      {/* 📘 New Download Section */}
+      <div className="bg-[#1a1a1a] rounded-2xl p-6 lg:p-8 text-white text-center space-y-4 shadow-md">
+        <h5 className="text-2xl md:text-3xl font-bold">
+          Download my exclusive guide:
+        </h5>
+        <p className="text-lg md:text-xl font-semibold italic">
+          “5 Strategies to Monetize Your Brand & Influence”
+        </p>
+        <p className="text-base text-gray-300 max-w-2xl mx-auto">
+          📘 Your step-by-step blueprint to transform your expertise into profit
+          and visibility.
+        </p>
+
+        <div className="flex gap-3 justify-center">
+          <a
+            href="/5_strategies_to_monetize.pdf"
+            target="_blank"
+            className="inline-block mt-2 px-6 py-3 bg-[#25618B] text-white rounded-full hover:bg-[#1d4e6b] transition cursor-pointer z-50 "
+          >
+            👉 Download the Free Guide
+          </a>
+          <a
+            href="/strategies_to_monetize_2.pdf"
+            target="_blank"
+            className="inline-block mt-2 px-6 py-3 bg-[#25618B] text-white rounded-full hover:bg-[#1d4e6b] transition cursor-pointer z-50"
+          >
+            👉 Download the Free Guide 2
+          </a>
+        </div>
+      </div>
+
+      {/* <div className="footer-gradient z-0" /> */}
+    </div>
+  </motion.div>
+);
+
+export default Download;
