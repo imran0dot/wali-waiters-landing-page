@@ -11,11 +11,11 @@ const Download = () => (
     variants={footerVariants}
     initial="hidden"
     whileInView="show"
-    className={`${styles.xPaddings} py-8 relative`}
+    className={`${styles.xPaddings} py-8 relative z-50`}
   >
     <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
       {/* 📘 New Download Section */}
-      <div className="bg-[#1a1a1a] rounded-2xl p-6 lg:p-8 text-white text-center space-y-4 shadow-md">
+      <div className="bg-[#1a1a1a49] rounded-2xl p-6 lg:p-8 text-white text-center space-y-4 shadow-md">
         <h5 className="text-2xl md:text-3xl font-bold">
           Download my exclusive guide:
         </h5>
