@@ -11,8 +11,8 @@ const Login = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({
-    email: 'john.doe@example.com',
-    password: 'Password123!',
+    email: '',
+    password: '',
   });
 
   const togglePassword = () => setShowPassword((prev) => !prev);
