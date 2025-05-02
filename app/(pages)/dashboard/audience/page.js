@@ -11,7 +11,7 @@ const UserTable = () => {
   const [loading, setLoading] = useState(true);
 
   const [page, setPage] = useState(1);
-  const limit = 10; // You can allow the user to change this if needed
+  const limit = 10;
   const [totalPages, setTotalPages] = useState(1);
 
   const token = localStorage.getItem('token');
