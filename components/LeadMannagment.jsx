@@ -51,22 +51,16 @@ const LeadMagnetForm = () => {
           {!submitted ? (
             <>
               <div className="space-y-1">
-                <p className="text-sm font-light tracking-wider text-gray-300">
-                  MELODY MORGAN FOX
-                </p>
-                <p className="text-sm font-semibold text-purple-400 tracking-wider uppercase">
-                  Hustle to Wealth
-                </p>
                 <p className="text-3xl italic font-semibold text-purple-500">
-                  presents
+                  Wali Waiters
                 </p>
               </div>
 
               <h2 className="text-2xl md:text-3xl font-extrabold">
-                10 STEPS TO MY FIRST MILLIONS
+                5 STRATEGIES TO MONETIZE
               </h2>
               <p className="text-gray-400 text-base max-w-xl mx-auto">
-                Enter your information below to get instant access to the free guide.
+                Add that Create your Vision!! Tell your story! Elevate you business/brand
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-3 max-w-md mx-auto">
