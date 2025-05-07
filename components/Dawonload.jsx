@@ -30,13 +30,13 @@ const Download = () => (
         <div className="flex flex-col items-centers gap-3 justify-center">
           <img src="/free_gide.png" className="w-60 mx-auto" draggable={false} />
 
-          {/* <a
+          <a
             href="/download-free-gide"
             target="_blank"
-            className="inline-block mt-2 px-6 py-3 bg-[#25618B] text-white rounded-full hover:bg-[#1d4e6b] transition cursor-pointer z-50"
+            className="underline font-thin"
           >
             👉 Download the Free Guide
-          </a> */}
+          </a>
         </div>
       </div>
 
