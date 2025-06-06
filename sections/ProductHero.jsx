@@ -73,6 +73,9 @@ const ProductHero = () => {
 
     if (hasError) return;
 
+    // ✅ Redirect to Stripe Checkout
+    window.location.href = 'https://buy.stripe.com/dRmcN4fVo4Zxbti2Qg8N200';
+
     // If all is valid
     console.log('Submitting form:', fromDetails);
     // Clear form or proceed with submission logic here
