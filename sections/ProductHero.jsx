@@ -1,3 +1,5 @@
+/* eslint-disable react/button-has-type */
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -109,17 +111,45 @@ const ProductHero = () => {
         >
           <motion.h1
             variants={textVariant(1.1)}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white"
+            className="text-3xl font-bold leading-tight text-white"
           >
-            Transformational <span className="text-indigo-400"> Truths </span>
+            Are You Ready to Reset{' '}
+            <span className="text-indigo-400">
+              {' '}
+              Your Life and Live Your Truth?{' '}
+            </span>
             <br />
           </motion.h1>
+
+          <motion.h2
+            variants={textVariant(1.2)}
+            className="text-lg font-bold text-white mt-5 leading-3"
+          >
+            Pre-order Transformational Truths by Wali Waiters — a powerful,
+            soul-shifting guide designed to help you rise, realign, and walk in
+            purpose. $24.95
+          </motion.h2>
           <motion.p
             variants={textVariant(1.3)}
             className="mt-6 text-lg text-gray-300 max-w-xl mx-auto lg:mx-0"
           >
-            Book your pre order
+            What You’ll Get:
           </motion.p>
+
+          <motion.ul variants={textVariant(1.4)}>
+            <li>10 transformational principles that guide your growth</li>
+            <li>
+              Real-life lessons to help you overcome fear, failure, and
+              frustration
+            </li>
+            <li>
+              Journaling prompts, power statements, and spiritual activations
+            </li>
+            <li>
+              Access to a FREE 20-minute Clarity Call with Wali Waiters (for the
+              first 25 buyers)
+            </li>
+          </motion.ul>
 
           <motion.div className="w-full mt-5 p-6  rounded-2xl shadow-xl border border-gray-700">
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -175,6 +205,7 @@ const ProductHero = () => {
         </motion.div>
       </motion.div>
     </section>
+
   );
 };
 
