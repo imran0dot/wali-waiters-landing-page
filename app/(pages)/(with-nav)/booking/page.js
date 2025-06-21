@@ -1,7 +1,12 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable import/no-extraneous-dependencies */
+
 "use client";
 
 import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { toast } from "sonner";
+import instance from "../../../../lib/axiosInstance";
 
 const Booking = () => {
   const [bookingData, setBookingData] = useState({
@@ -14,6 +19,8 @@ const Booking = () => {
     estimatedBudget: "",
     message: "",
   });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -24,10 +31,35 @@ const Booking = () => {
     }));
   };
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
 
-    console.log(bookingData);
+    try {
+      const response = await instance.post(
+        "/booking/create-booking",
+        bookingData
+      );
+      if (response.data.success) {
+        toast.success(
+          "Thank you for your interest in booking Wali! We’ll be in touch within 48 hours."
+        );
+        setBookingData({
+          name: "",
+          email: "",
+          phone: "",
+          organizationOrEventName: "",
+          location: "",
+          dateOfEvent: "",
+          estimatedBudget: "",
+          message: "",
+        });
+        setIsSubmitted(true);
+      }
+    } catch (err) {
+      if (err?.code) {
+        toast.error(err.message);
+      }
+    }
   };
 
   return (
@@ -52,84 +84,100 @@ const Booking = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="backdrop-blur-md bg-gradient-to-r from-blue-600/20 to-yellow-600/20 rounded-3xl border border-blue-400/30 p-12 max-w-4xl mx-auto mb-12"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
-              Book Your Event
-            </h3>
-            <form
-              onSubmit={onSubmit}
-              className=" mx-auto bg-transparent p-5 rounded-2xl shadow-lg space-y-5"
-            >
-              {/* Text Inputs */}
-              {[
-                { name: "name", placeholder: "Your Name" },
-                { name: "email", placeholder: "Your Email", type: "email" },
-                { name: "phone", placeholder: "Your Phone", type: "tel" },
-                {
-                  name: "organizationOrEventName",
-                  placeholder: "Organization / Event Name",
-                },
-                { name: "location", placeholder: "Location" },
-                {
-                  name: "dateOfEvent",
-                  placeholder: "Date of Event",
-                  type: "date",
-                },
-              ].map(({ name, placeholder, type = "text" }) => (
-                <input
-                  key={name}
-                  type={type}
-                  name={name}
-                  value={bookingData[name]}
+            {!isSubmitted && (
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+                Book Your Event
+              </h3>
+            )}
+            {isSubmitted ? (
+              <div className="text-white p-8  max-w-xl mx-auto text-center">
+                <h2 className="text-2xl font-semibold mb-4">Thank You!</h2>
+                <p className="text-lg text-gray-300">
+                  Thank you for your interest in booking{" "}
+                  <span className="text-indigo-400 font-medium">Wali</span>!{" "}
+                  <br />
+                  We’ll be in touch within{" "}
+                  <span className="font-semibold">48 hours</span>.
+                </p>
+              </div>
+            ) : (
+              <form
+                onSubmit={onSubmit}
+                className=" mx-auto bg-transparent p-5 rounded-2xl shadow-lg space-y-5"
+              >
+                {/* Text Inputs */}
+                {[
+                  { name: "name", placeholder: "Your Name" },
+                  { name: "email", placeholder: "Your Email", type: "email" },
+                  { name: "phone", placeholder: "Your Phone", type: "tel" },
+                  {
+                    name: "organizationOrEventName",
+                    placeholder: "Organization / Event Name",
+                  },
+                  { name: "location", placeholder: "Location" },
+                  {
+                    name: "dateOfEvent",
+                    placeholder: "Date of Event",
+                    type: "date",
+                  },
+                ].map(({ name, placeholder, type = "text" }) => (
+                  <input
+                    key={name}
+                    type={type}
+                    name={name}
+                    required
+                    value={bookingData[name]}
+                    onChange={onChangeInput}
+                    placeholder={placeholder}
+                    style={{ borderColor: "#597dc55c" }}
+                    className="w-full p-3 bg-transparent border text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                ))}
+
+                {/* Estimated Budget Dropdown */}
+                <select
+                  name="estimatedBudget"
+                  value={bookingData.estimatedBudget}
                   onChange={onChangeInput}
-                  placeholder={placeholder}
                   style={{ borderColor: "#597dc55c" }}
-                  className="w-full p-3 bg-transparent border text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3 bg-transparent text-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option className="text-gray-700" value="">
+                    Estimated Budget (Optional)
+                  </option>
+                  <option className="text-gray-700" value="Under $1K">
+                    Under $1K
+                  </option>
+                  <option className="text-gray-700" value="$1K–$3K">
+                    $1K–$3K
+                  </option>
+                  <option className="text-gray-700" value="$3K–$5K">
+                    $3K–$5K
+                  </option>
+                  <option className="text-gray-700" value="$5K+">
+                    $5K+
+                  </option>
+                </select>
+
+                {/* Message */}
+                <textarea
+                  name="message"
+                  value={bookingData.message}
+                  onChange={onChangeInput}
+                  placeholder="Message"
+                  rows={4}
+                  className="w-full p-3 border bg-transparent text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-              ))}
 
-              {/* Estimated Budget Dropdown */}
-              <select
-                name="estimatedBudget"
-                value={bookingData.estimatedBudget}
-                onChange={onChangeInput}
-                style={{ borderColor: "#597dc55c" }}
-                className="w-full p-3 bg-transparent text-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option className="text-gray-700" value="">
-                  Estimated Budget (Optional)
-                </option>
-                <option className="text-gray-700" value="under-1k">
-                  Under $1K
-                </option>
-                <option className="text-gray-700" value="1k-3k">
-                  $1K–$3K
-                </option>
-                <option className="text-gray-700" value="3k-5k">
-                  $3K–$5K
-                </option>
-                <option className="text-gray-700" value="5k-plus">
-                  $5K+
-                </option>
-              </select>
-
-              {/* Message */}
-              <textarea
-                name="message"
-                value={bookingData.message}
-                onChange={onChangeInput}
-                placeholder="Message"
-                rows={4}
-                className="w-full p-3 border bg-transparent text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
-              >
-                Send Request
-              </button>
-            </form>
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+                >
+                  Send Request
+                </button>
+              </form>
+            )}
           </motion.div>
         </motion.div>
       </div>
