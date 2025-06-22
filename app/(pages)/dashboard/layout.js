@@ -1,19 +1,22 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable import/no-unresolved */
 
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import instance from '../../../lib/axiosInstance';
-import AuthGard from '../../../components/AuthGard';
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import AuthGard from "../../../components/AuthGard";
 
 const dashboardMenus = [
   {
-    name: 'Audience',
-    link: '/audience',
+    name: "Audience",
+    link: "/audience",
+  },
+  {
+    name: "Bookings",
+    link: "/bookings",
   },
 ];
 
@@ -22,19 +25,13 @@ const DashboardLayout = ({ children }) => {
   const router = useRouter();
 
   const logout = async () => {
-    localStorage.removeItem('token');
-
-    try {
-      await instance.post('/user/logout');
-      router.push('/login');
-    } catch (err) {
-      console.log(err);
-    }
+    localStorage.removeItem("token");
+    router.push("/login");
   };
 
   return (
     <AuthGard>
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Mobile toggle button */}
         <button
           className="md:hidden p-4 focus:outline-none"
@@ -47,7 +44,7 @@ const DashboardLayout = ({ children }) => {
         <div
           className={`
           fixed top-0 left-0 bottom-0 min-h-[100vh] w-64 bg-gray-800 text-white p-4 z-40
-          transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+          transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
           transition-transform duration-300 ease-in-out
           md:relative md:translate-x-0 md:flex md:flex-col
         `}

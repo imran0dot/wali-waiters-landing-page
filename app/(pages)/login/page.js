@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Eye, EyeOff, Loader } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import instance from '../../../lib/axiosInstance';
+import React, { useState } from "react";
+import { Eye, EyeOff, Loader } from "lucide-react";
+import { useRouter } from "next/navigation";
+import instance from "../../../lib/axiosInstance";
 
 const Login = () => {
   const router = useRouter();
@@ -11,8 +11,8 @@ const Login = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const togglePassword = () => setShowPassword((prev) => !prev);
@@ -25,10 +25,13 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const login = await instance.post('/user/login', { ...form });
-      if (login?.data?.accessToken) {
-        localStorage.setItem('token', `Bearer ${login?.data?.accessToken}`);
-        router.push('/dashboard');
+      const login = await instance.post("/auth/login", { ...form });
+      if (login?.data?.data?.accessToken) {
+        localStorage.setItem(
+          "token",
+          `Bearer ${login?.data?.data?.accessToken}`,
+        );
+        router.push("/dashboard");
       }
       console.log(login?.data?.user?.userId);
     } catch (err) {
@@ -36,7 +39,7 @@ const Login = () => {
     } finally {
       setTimeout(() => setLoading(false), 1000);
     }
-    console.log('Login attempt:', form);
+    console.log("Login attempt:", form);
     // Add actual login logic here
   };
 
@@ -74,7 +77,7 @@ const Login = () => {
           </label>
           <div className="relative mt-1">
             <input
-              type={showPassword ? 'text' : 'password'}
+              type={showPassword ? "text" : "password"}
               name="password"
               value={form.password}
               onChange={handleChange}
@@ -95,11 +98,12 @@ const Login = () => {
         <button
           disabled={loading}
           type="submit"
-          className={`w-full ${loading ? 'bg-slate-200' : 'bg-indigo-600  hover:bg-indigo-700'}  text-white py-2 rounded-md flex gap-3 justify-center items-center`}
+          className={`w-full ${
+            loading ? "bg-slate-200" : "bg-indigo-600  hover:bg-indigo-700"
+          }  text-white py-2 rounded-md flex gap-3 justify-center items-center`}
         >
           Sign In
-          {loading
-          && <Loader className="animate-spin" /> }
+          {loading && <Loader className="animate-spin" />}
         </button>
       </form>
     </div>
