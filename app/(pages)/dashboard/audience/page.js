@@ -19,7 +19,7 @@ const UserTable = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await instance.get('/audience', {
+      const response = await instance.get('/audiences', {
         headers: { authorization: token },
         params: { page, limit },
         withCredentials: true,
@@ -36,7 +36,7 @@ const UserTable = () => {
 
   useEffect(() => {
     fetchData();
-  }, [page]);
+  }, []);
 
   const handlePrevPage = () => {
     if (page > 1) setPage(page - 1);

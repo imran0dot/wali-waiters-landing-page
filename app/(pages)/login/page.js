@@ -26,12 +26,11 @@ const Login = () => {
     setLoading(true);
     try {
       const login = await instance.post("/auth/login", { ...form });
-
-      console.log("======== Login data =========");
-      console.log(login?.data?.data);
-
       if (login?.data?.data?.accessToken) {
-        localStorage.setItem("token", `Bearer ${login?.data?.data?.accessToken}`);
+        localStorage.setItem(
+          "token",
+          `Bearer ${login?.data?.data?.accessToken}`,
+        );
         router.push("/dashboard");
       }
       console.log(login?.data?.user?.userId);
