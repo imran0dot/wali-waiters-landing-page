@@ -34,7 +34,7 @@ const DashboardLayout = ({ children }) => {
 
   return (
     <AuthGard>
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Mobile toggle button */}
         <button
           className="md:hidden p-4 focus:outline-none"

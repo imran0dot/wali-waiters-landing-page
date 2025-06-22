@@ -1,24 +1,40 @@
 "use client";
 
+import { jwtDecode } from "jwt-decode";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const AuthGard = ({ children }) => {
+const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
-  const [isClient, setIsClient] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      router.push("/login");
-    } else {
-      setIsClient(true); // only render children after client check
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        router.replace("/login");
+      } else {
+        try {
+          const decoded: any = jwtDecode(token?.split(" ")[1]);
+
+          const currentTime = Date.now() / 1000;
+          if (decoded.exp < currentTime) {
+            localStorage.removeItem("token");
+            router.replace("/login");
+          } else {
+            setLoading(false);
+          }
+        } catch (error) {
+          router.replace("/login");
+        }
+      }
     }
   }, [router]);
 
-  if (!isClient) return null;
+  if (loading) return null;
 
-  return children;
+  return <>{children}</>;
 };
 
-export default AuthGard;
+export default AuthGuard;
