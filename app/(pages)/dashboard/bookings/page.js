@@ -34,8 +34,6 @@ const BookingTable = () => {
     }
   };
 
-  console.log(bookingData);
-
   useEffect(() => {
     fetchData();
   }, []);
