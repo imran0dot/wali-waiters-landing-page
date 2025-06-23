@@ -6,6 +6,7 @@
 import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { toast } from "sonner";
+import { LoaderIcon } from "lucide-react";
 import instance from "../../../../lib/axiosInstance";
 
 const Booking = () => {
@@ -19,6 +20,7 @@ const Booking = () => {
     estimatedBudget: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const ref = useRef(null);
@@ -33,6 +35,7 @@ const Booking = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     try {
       const response = await instance.post(
@@ -59,6 +62,8 @@ const Booking = () => {
       if (err?.code) {
         toast.error(err.message);
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -172,9 +177,15 @@ const Booking = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+                  disabled={loading}
+                  className={`${
+                    loading ? "bg-zinc-300" : " bg-blue-600 hover:bg-blue-700"
+                  } w-full text-white py-3 rounded-lg text-lg font-semibold transition flex justify-center items-center gap-3`}
                 >
-                  Send Request
+                  Send Request{" "}
+                  {loading && (
+                    <LoaderIcon className="inline ml-3 animate-spin" />
+                  )}
                 </button>
               </form>
             )}
