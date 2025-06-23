@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import styles from '../styles';
-import { slideIn, staggerContainer, textVariant } from '../utils/motion';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import styles from "../styles";
+import { slideIn, staggerContainer, textVariant } from "../utils/motion";
 
 const Hero = () => (
   <section className={`${styles.yPaddings} sm:px-16 px-6`}>
@@ -38,16 +38,19 @@ const Hero = () => (
           className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
           <Link href="https://calendly.com/wali-waiters/30mincall?month=2025-04">
-            <div className="bg-indigo-500 text-white px-6 py-3 rounded-2xl font-medium hover:bg-indigo-600 transition">
+            <button
+              type="button"
+              className="bg-gradient-to-r from-blue-600 to-yellow-600 text-white font-semibold px-8 py-4 rounded-full hover:from-blue-700 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
+            >
               Booking Now
-            </div>
+            </button>
           </Link>
         </motion.div>
       </div>
 
       {/* IMAGE SECTION */}
       <motion.div
-        variants={slideIn('right', 'tween', 0.3, 1)}
+        variants={slideIn("right", "tween", 0.3, 1)}
         className="relative flex-1"
       >
         <img
@@ -60,7 +63,7 @@ const Hero = () => (
           alt="stamp"
           className="absolute bottom-[-40px] right-[-20px] sm:w-[120px] w-[80px] animate-spin-slow z-20"
           animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 10, ease: 'linear' }}
+          transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
         />
       </motion.div>
     </motion.div>

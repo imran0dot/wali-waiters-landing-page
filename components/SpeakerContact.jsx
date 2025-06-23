@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 const SpeakerContact = () => {
   const ref = useRef(null);
@@ -37,16 +38,16 @@ const SpeakerContact = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <motion.a
-                href="https://waliwaitersconsulting.com"
+              <Link
+                href="/booking"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-blue-600 to-yellow-600 text-white font-semibold px-8 py-4 rounded-full hover:from-blue-700 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Visit Website
-              </motion.a>
+                Booking Now
+              </Link>
 
               <motion.div
                 className="text-center sm:text-left"

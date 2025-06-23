@@ -17,7 +17,7 @@ const Book = () => {
     window.location.href = 'https://buy.stripe.com/dRmcN4fVo4Zxbti2Qg8N200';
   };
   return (
-    <div className="relative">
+    <div className="relative mt-20">
       <section className={`${styles.yPaddings} sm:px-16 px-6`}>
         <motion.div
           variants={staggerContainer}

@@ -1,9 +1,15 @@
-import Download from '../../../../components/Dawonload';
-import { About, Explore, GetStarted, Hero, WhatsNew } from '../../../../sections';
-import ClientReview from '../../../../sections/ClientReview';
+import Download from "../../../../components/Dawonload";
+import {
+  About,
+  Explore,
+  GetStarted,
+  Hero,
+  WhatsNew,
+} from "../../../../sections";
+import ClientReview from "../../../../sections/ClientReview";
 
 const Page = () => (
-  <>
+  <div className="mt-20">
     <Hero />
     <div className="relative">
       <About />
@@ -25,7 +31,7 @@ const Page = () => (
       <div className="gradient-04 z-0" />
       <WhatsNew />
     </div>
-  </>
+  </div>
 );
 
 export default Page;
