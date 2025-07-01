@@ -33,7 +33,7 @@ const LeadMagnetForm = () => {
     }
 
     try {
-      await instance.post("/audience/create", formData);
+      await instance.post("/audiences/create", formData);
       setSubmitted(true);
       router.replace("/WALI_WAITERS_one_sheet.pdf");
     } catch (err) {
