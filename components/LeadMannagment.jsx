@@ -1,16 +1,18 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
-import { footerVariants } from '../utils/motion';
-import styles from '../styles';
-import instance from '../lib/axiosInstance';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { LoaderIcon } from "lucide-react";
+import { footerVariants } from "../utils/motion";
+import styles from "../styles";
+import instance from "../lib/axiosInstance";
 
 const LeadMagnetForm = () => {
-  const [formData, setFormData] = useState({ name: '', email: '' });
+  const [formData, setFormData] = useState({ name: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const router = useRouter();
 
   const handleChange = (e) => {
@@ -22,20 +24,25 @@ const LeadMagnetForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const { name, email } = formData;
     if (!name || !email) {
-      setError('Please fill out both fields.');
+      setError("Please fill out both fields.");
       return;
     }
 
     try {
-      await instance.post('/audience/create', formData);
+      await instance.post("/audience/create", formData);
       setSubmitted(true);
-      router.replace('/strategies_to_monetize_2.pdf');
+      router.replace("/WALI_WAITERS_one_sheet.pdf");
     } catch (err) {
-      console.error('Submission error:', err);
-      setError('Something went wrong. Please try again later.');
+      console.error("Submission error:", err);
+      setError("Something went wrong. Please try again later.");
+    } finally {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     }
   };
 
@@ -60,10 +67,14 @@ const LeadMagnetForm = () => {
                 5 STRATEGIES TO MONETIZE
               </h2>
               <p className="text-gray-400 text-base max-w-xl mx-auto">
-                Add that Create your Vision!! Tell your story! Elevate you business/brand
+                Add that Create your Vision!! Tell your story! Elevate you
+                business/brand
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-3 max-w-md mx-auto">
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-3 max-w-md mx-auto"
+              >
                 {error && <p className="text-red-400 text-sm">{error}</p>}
                 <input
                   type="text"
@@ -82,10 +93,14 @@ const LeadMagnetForm = () => {
                   className="w-full px-4 py-2 bg-[#2b2b2b] border border-gray-600 placeholder-gray-400 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
                 <button
+                  disabled={loading}
                   type="submit"
                   className="w-full bg-purple-400 hover:bg-purple-500 text-black font-bold py-2 px-4 rounded-md transition-colors"
                 >
                   DOWNLOAD NOW!
+                  {loading && (
+                    <LoaderIcon className="inline-block animate-spin" />
+                  )}
                 </button>
               </form>
             </>
