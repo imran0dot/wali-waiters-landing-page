@@ -7,7 +7,6 @@ import SpeakerAbout from "../../../../sections/SpeakerAbout";
 import SpeakerExperience from "../../../../components/SpeakerExperience";
 import SpeakerTools from "../../../../components/SpeakerTools";
 import SpeakerContact from "../../../../components/SpeakerContact";
-import Download from "../../../../components/Dawonload";
 
 const Speaker = () => (
   <>
@@ -20,11 +19,6 @@ const Speaker = () => (
 
     {/* Speaking Topics */}
     <SpeakerTools />
-
-    <div className="relative">
-      <Download />
-      <div className="gradient-03 z-0" />
-    </div>
 
     {/* Contact section  */}
     <SpeakerContact />

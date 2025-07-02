@@ -43,9 +43,9 @@ const Hero = () => (
           BUILDING A LEGACY
         </h2>
         <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
-          Over 30+ years in media, leadership, and personal growth,
-          captivating & igniting audiences everywhere, from the conference
-          room to the ballroom, stages to youth centers.
+          Over 30+ years in media, leadership, and personal growth, captivating
+          & igniting audiences everywhere, from the conference room to the
+          ballroom, stages to youth centers.
         </p>
       </motion.div>
 
@@ -72,14 +72,15 @@ const Hero = () => (
       >
         <button
           type="button"
-          onClick={() => {
-            document
-              .getElementById("about")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
           className="bg-gradient-to-r from-blue-600 to-yellow-600 text-white font-semibold px-8 py-4 rounded-full hover:from-blue-700 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
         >
-          Discover More
+          <a
+            href="/WALI_WAITERS_one_sheet.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Speaker one sheet
+          </a>
         </button>
       </motion.div>
     </div>
