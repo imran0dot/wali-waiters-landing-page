@@ -35,7 +35,7 @@ const LeadMagnetForm = () => {
     try {
       await instance.post("/audiences/create", formData);
       setSubmitted(true);
-      router.replace("/WALI_WAITERS_one_sheet.pdf");
+      router.replace("/5_strategies_to_monetize.pdf");
     } catch (err) {
       console.error("Submission error:", err);
       setError("Something went wrong. Please try again later.");
