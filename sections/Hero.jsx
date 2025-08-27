@@ -6,7 +6,7 @@ import styles from "../styles";
 import { slideIn, staggerContainer, textVariant } from "../utils/motion";
 
 const Hero = () => (
-  <section className={`${styles.yPaddings} sm:px-16 px-6`}>
+  <section className={`${styles.yPaddings} sm:px-16 px-6 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-600/30 via-blue-900/20 to-transparent`}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"

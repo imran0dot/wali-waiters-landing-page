@@ -10,8 +10,11 @@ import ClientReview from "../../../../sections/ClientReview";
 import Video from "../../../../sections/Video";
 
 const Page = () => (
-  <div className="mt-20">
-    <Hero />
+  <div>
+    <div className="pt-32">
+      <Hero />
+    </div>
+
     <div className="relative">
       <Video />
     </div>

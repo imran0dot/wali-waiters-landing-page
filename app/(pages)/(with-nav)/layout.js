@@ -6,7 +6,7 @@ import Navigation from "../../../components/Navbar";
 const layout = ({ children }) => (
   <div className="bg-primary-black overflow-hidden">
     <Navigation />
-    {children}
+    <div className="">{children}</div>
     <Footer />
   </div>
 );

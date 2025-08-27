@@ -1,10 +1,12 @@
-import { Footer, Navbar } from '../components';
-import Home from './(pages)/(with-nav)/home/page';
+import { Footer, Navbar } from "../components";
+import Home from "./(pages)/(with-nav)/home/page";
 
 const Page = () => (
   <div className="bg-primary-black overflow-hidden">
     <Navbar />
-    <Home />
+    <div className="-mt-16">
+      <Home />
+    </div>
     <Footer />
   </div>
 );

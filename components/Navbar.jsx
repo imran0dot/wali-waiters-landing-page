@@ -5,19 +5,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Navigation = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // const scrollToSection = (id) => {
   //   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -33,11 +24,7 @@ const Navigation = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-md bg-slate-950/80 border-b border-blue-500/20"
-          : ""
-      }`}
+      className="fixed top-0 w-full z-50 transition-all"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
