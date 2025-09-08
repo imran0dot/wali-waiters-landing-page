@@ -82,7 +82,7 @@ const ProjectBooking = () => {
 
             <div className="mt-3 flex justify-center items-center">
               <Link
-                href="/booking"
+                href="https://calendly.com/wali-waiters/30mincall?month=2025-04"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-gradient-to-r from-yellow-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-full hover:from-yellow-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg mx-auto"
@@ -102,7 +102,7 @@ const ProjectBooking = () => {
           className="backdrop-blur-md bg-gradient-to-bl from-yellow-600/20 to-transparent rounded-2xl border border-yellow-400/30 p-8"
         >
           <h3 className="text-2xl font-bold text-blue-400 mb-6">
-            Pickleball Adventures
+            Pickleball Adventures TV
           </h3>
           <ul className="space-y-3 text-gray-300">
             {[
@@ -133,7 +133,7 @@ const ProjectBooking = () => {
 
             <div className="mt-3 flex justify-center items-center">
               <Link
-                href="/booking"
+                href="https://calendly.com/wali-waiters/30mincall?month=2025-04"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-gradient-to-r from-yellow-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-full hover:from-yellow-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg mx-auto"

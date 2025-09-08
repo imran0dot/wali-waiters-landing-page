@@ -31,7 +31,7 @@ const ProjectHero = () => (
       >
         <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-6">
           <span className="block bg-gradient-to-r from-blue-400 via-white to-yellow-400 bg-clip-text text-transparent">
-            Pickleball Adventures
+            Pickleball Adventures TV
           </span>
         </h1>
       </motion.div>
@@ -46,7 +46,7 @@ const ProjectHero = () => (
           Discover Our Premiere Productions and New Projects Transforming
           Entertainment At Wali Waiters Consulting, we’re producing dynamic,
           purpose-driven shows that blend storytelling, lifestyle, and impact.
-          From the high-energy world of Pickleball Adventures to the
+          From the high-energy world of Pickleball Adventures TV to the
           sophisticated vibe of{" "}
           <span className="font-bold bg-gradient-to-r from-blue-400 via-white to-yellow-400 bg-clip-text text-transparent">
             The 19th Hole
@@ -70,7 +70,7 @@ const ProjectHero = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn More About Pickleball Adventures
+            Learn More About Pickleball Adventures TV
           </a>
         </button>
       </motion.div>

@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable react/button-has-type */
+
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
