@@ -12,7 +12,7 @@ const Hero = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10"
+      className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 pt-32"
     >
       {/* TEXT SECTION */}
       <div className="z-10 flex-1 text-center lg:text-left">
