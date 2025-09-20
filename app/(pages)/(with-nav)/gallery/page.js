@@ -135,11 +135,11 @@ const SpeakerGallery = () => {
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-white to-yellow-400 bg-clip-text text-transparent">
-            Video
+            Featured Shows & Productions
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            A glimpse into transformative events, powerful moments, and
-            inspiring audiences from Wali’s journey.
+            A curated look at shows, sizzles, and productions led by Wali
+            Waiters
           </p>
         </div>
 
