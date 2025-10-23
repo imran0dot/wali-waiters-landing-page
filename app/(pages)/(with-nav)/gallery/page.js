@@ -56,22 +56,22 @@ const SpeakerGallery = () => {
   ];
 
   const videos = [
-    {
-      src: "https://player.vimeo.com/video/82027261",
-      title: "Wali Waiters - Featured TV Segment",
-    }, // ✅ required
-    {
-      src: "https://player.vimeo.com/video/133372956",
-      title: "Veterans Segment",
-    },
-    {
-      src: "https://player.vimeo.com/video/93190397",
-      title: "Veterans Segment",
-    },
-    {
-      src: "https://player.vimeo.com/video/123967655",
-      title: "Veterans Interview",
-    },
+    // {
+    //   src: "https://player.vimeo.com/video/82027261",
+    //   title: "Wali Waiters - Featured TV Segment",
+    // }, // ✅ required
+    // {
+    //   src: "https://player.vimeo.com/video/133372956",
+    //   title: "Veterans Segment",
+    // },
+    // {
+    //   src: "https://player.vimeo.com/video/93190397",
+    //   title: "Veterans Segment",
+    // },
+    // {
+    //   src: "https://player.vimeo.com/video/123967655",
+    //   title: "Veterans Interview",
+    // },
     {
       src: "https://www.youtube.com/embed/qBXnr3VlO6Y",
       title: "Competitive Edge with Montel Williams",
