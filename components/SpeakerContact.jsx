@@ -59,7 +59,7 @@ const SpeakerContact = () => {
                   Now Booking
                 </div>
                 <div className="text-white font-bold text-xl">
-                  2025-2026 Tour
+                  Transformative Tour
                 </div>
               </motion.div>
             </div>

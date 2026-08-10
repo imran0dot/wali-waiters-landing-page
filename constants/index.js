@@ -1,3 +1,7 @@
+// Single source of truth for the outbound links used across the site.
+export const AMAZON_BOOK_URL = 'https://amzn.to/4hw7QA3';
+export const CALENDLY_URL = 'https://calendly.com/wali-waiters/30mincall';
+
 export const exploreWorlds = [
   {
     id: 'world-1',

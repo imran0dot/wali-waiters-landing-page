@@ -13,47 +13,73 @@ const SpeakerGallery = () => {
 
   const [playingIndex, setPlayingIndex] = useState(null);
 
-  const images = [
+  // Speaking & author images lead the gallery, general event photography follows.
+  // Add new speaking photographs to `speakingImages` and they appear first automatically.
+  const speakingImages = [
+    {
+      src: "/book/wali-with-book.jpg",
+      title: "Wali Waiters, Author of Transformational Truths",
+    },
+    {
+      src: "/book/reader-1.jpg",
+      title: "Readers with Transformational Truths",
+    },
+    {
+      src: "/book/reader-2.jpg",
+      title: "Sharing Transformational Truths with readers",
+    },
+    {
+      src: "/gallery/10.jpeg",
+      title:
+        "On set of 'The Competitive Edge With Montel Williams' with hip-hop artist Trina",
+    },
+    {
+      src: "/gallery/19.jpeg",
+      title: "Steven Kotler, New York Times Best-Selling Author and Speaker",
+    },
+    {
+      src: "/gallery/18.png",
+      title: "Marc Randolph, Co-Founder of Netflix",
+    },
+  ];
+
+  const eventImages = [
+    {
+      src: "/gallery/william-shatner.png",
+      title: "William Shatner, Actor and Author",
+    },
+    {
+      src: "/gallery/13.jpeg",
+      title: "Cuba Gooding Jr., Academy Award-winning actor",
+    },
     {
       src: "/gallery/havy_wait_champ.jpeg",
       title: "Big Time McClain, Former Heavyweight Champion",
     },
     {
       src: "/gallery/1.jpeg",
-      title: "Vanilla Ice - Robert Van Winkle (Hip-Hop Artist)",
+      title: "Vanilla Ice — Robert Van Winkle, Hip-Hop Artist",
     },
-    { src: "/gallery/2.jpeg", title: "Lamar Odom, former Los Angeles Laker" },
+    { src: "/gallery/2.jpeg", title: "Lamar Odom, Former Los Angeles Laker" },
     {
       src: "/gallery/4.jpeg",
       title: "Damon Dash, Co-Founder of Roc-A-Fella Records",
     },
-    { src: "/gallery/6.jpeg", title: "James Bond Gala" },
     {
       src: "/gallery/7.jpeg",
-      title: "Philanthropist and Founder of Priceline and Ubid",
+      title: "Philanthropist and Founder of Priceline and uBid",
     },
-    {
-      src: "/gallery/10.jpeg",
-      title:
-        "Hip-hop artist Trina on 'The Competitive Edge With Montel Williams'",
-    },
-    { src: "/gallery/11.jpeg", title: "Red Carpet Event" },
     {
       src: "/gallery/12.jpeg",
-      title: "Lito Sheppard - Former Philadelphia Eagle and Florida Gator",
+      title: "Lito Sheppard — Former Philadelphia Eagle and Florida Gator",
     },
     {
-      src: "/gallery/13.jpeg",
-      title: "Cuba Gooding Jr., Academy Award-winning actor",
+      src: "/gallery/16.jpeg",
+      title: "James Bond Gala — Tower Club, Fort Lauderdale",
     },
-    { src: "/gallery/16.jpeg", title: "Red Carpet Event" },
-    { src: "/gallery/18.png", title: "Marc Randolph, Founder of Netflix" },
-    {
-      src: "/gallery/19.jpeg",
-      title: "Steven Kotler, New York Times Best-Selling Author and Speaker",
-    },
-    { src: "/gallery/william-shatner.png", title: "William Shatner" },
   ];
+
+  const images = [...speakingImages, ...eventImages];
 
   const videos = [
     // {
@@ -95,8 +121,8 @@ const SpeakerGallery = () => {
               Gallery
             </h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              A glimpse into transformative events, powerful moments, and
-              inspiring audiences from Wali’s journey.
+              Speaking, author moments, and the powerful people Wali has shared
+              a stage, a set, and a story with.
             </p>
           </div>
 
@@ -107,7 +133,7 @@ const SpeakerGallery = () => {
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 animate={galleryInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: Math.min(index, 6) * 0.08 }}
                 className="relative break-inside-avoid rounded-2xl overflow-hidden group shadow-lg border border-blue-400/20"
               >
                 <Image
@@ -117,8 +143,9 @@ const SpeakerGallery = () => {
                   height={400}
                   className="object-cover w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
-                  <h3 className="text-lg sm:text-xl font-semibold text-white mb-4 px-4 text-center">
+                {/* Caption stays visible so names and titles also read on touch devices */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-10 pb-4 px-4 flex items-end justify-center">
+                  <h3 className="text-sm sm:text-base font-semibold text-white text-center">
                     {img.title}
                   </h3>
                 </div>

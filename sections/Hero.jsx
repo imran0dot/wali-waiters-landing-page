@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { CALENDLY_URL } from "../constants";
 import styles from "../styles";
 import { slideIn, staggerContainer, textVariant } from "../utils/motion";
 
@@ -37,7 +38,11 @@ const Hero = () => (
           variants={textVariant(1.5)}
           className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
-          <Link href="https://calendly.com/wali-waiters/30mincall?month=2025-04">
+          <Link
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button
               type="button"
               className="bg-gradient-to-r from-blue-600 to-yellow-600 text-white font-semibold px-8 py-4 rounded-full hover:from-blue-700 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"

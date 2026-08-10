@@ -82,10 +82,10 @@ const SpeakerAbout = () => {
             </h3>
             <div className="text-center">
               <div className="text-3xl font-bold text-yellow-400 mb-4">
-                2025-2026
+                TRANSFORMATIVE TOUR
               </div>
               <div className="text-xl font-semibold text-white mb-6">
-                TRANSFORMATIVE TOUR
+                KEYNOTES · WORKSHOPS · ASSEMBLIES
               </div>
               <Link
                 href="/booking"

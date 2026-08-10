@@ -25,8 +25,8 @@ const ProjectBooking = () => {
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 leading-relaxed text-center max-w-4xl mx-auto">
             The 19th Hole is a fresh, golf-inspired series that dives into the
-            stories, connections, and cluture behind the game. It's about what
-            the courese - around it
+            stories, connections, and culture behind the game. It’s about what
+            happens off the course as much as what happens on it.
           </p>
 
           <Link
@@ -34,10 +34,8 @@ const ProjectBooking = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-yellow-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-full hover:from-yellow-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
-            Explore The 19th Hole
+            Enquire About The 19th Hole
           </Link>
         </motion.div>
       </div>
@@ -56,8 +54,8 @@ const ProjectBooking = () => {
             {[
               "Celebrity golf + lifestyle TV series where the game continues after the round.",
               "A-list guests, championship courses, luxury dining, and brand integrations.",
-              "Badges: 15 Streaming Platforms · 436M+ Households · Celebrity Guests",
-              "Viewership: 436M+ households + 10M+ social reach",
+              "15 streaming platforms · Celebrity guests · Premium brand integrations",
+              "Viewership: 436M+ households and 10M+ social reach",
             ].map((item, index) => (
               <motion.li
                 key={index}
@@ -82,7 +80,7 @@ const ProjectBooking = () => {
 
             <div className="mt-3 flex justify-center items-center">
               <Link
-                href="https://calendly.com/wali-waiters/30mincall?month=2025-04"
+                href="https://calendly.com/wali-waiters/30mincall"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-gradient-to-r from-yellow-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-full hover:from-yellow-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg mx-auto"
@@ -107,8 +105,8 @@ const ProjectBooking = () => {
           <ul className="space-y-3 text-gray-300">
             {[
               "Fast-growing sport meets travel and lifestyle, highlighting destinations, competition, and culture.",
-              "Badges: Lifestyle · Travel · Emerging Sport",
-              "Viewership: 436M+ households + 10M+ social reach",
+              "Lifestyle · Travel · Emerging sport",
+              "Viewership: 436M+ households and 10M+ social reach",
             ].map((item, index) => (
               <motion.li
                 key={index}
@@ -133,7 +131,7 @@ const ProjectBooking = () => {
 
             <div className="mt-3 flex justify-center items-center">
               <Link
-                href="https://calendly.com/wali-waiters/30mincall?month=2025-04"
+                href="https://calendly.com/wali-waiters/30mincall"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-gradient-to-r from-yellow-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-full hover:from-yellow-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg mx-auto"

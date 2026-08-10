@@ -24,25 +24,38 @@ const Project = () => (
         Overview
       </h3>
       <p className="text-lg text-gray-300 mb-8 leading-relaxed text-center">
-        The 19th Hole with Jonathan is a reality-lifestyle TV series that
-        takes viewers beyond the fairway — where championWhy It Matters:
+        The 19th Hole with Jonathan is a reality-lifestyle TV series that takes
+        viewers beyond the fairway — where champions, celebrities, and
+        tastemakers keep the conversation going long after the final putt.
       </p>
+
+      <h4 className="text-xl font-semibold text-white mb-3 text-center">
+        Why It Matters
+      </h4>
       <p className="text-lg text-gray-300 mb-8 leading-relaxed text-center">
-        This series connects with an affluent, aspirational audience that
-        loves golf, food, travel, and entertainment. By blendPartnership
-        Opportunities:
+        This series connects with an affluent, aspirational audience that loves
+        golf, food, travel, and entertainment — blending sport, lifestyle, and
+        storytelling in one premium package.
       </p>
+
+      <h4 className="text-xl font-semibold text-white mb-3 text-center">
+        Partnership Opportunities
+      </h4>
       <p className="text-lg text-gray-300 mb-8 leading-relaxed text-center">
-        We’re finalizing a select group of sponsors and partners for Season
-        One. To protect exclusivity, opportunities are limNext Steps:
+        We’re finalizing a select group of sponsors and partners for Season One.
+        To protect exclusivity, opportunities are limited.
       </p>
+
+      <h4 className="text-xl font-semibold text-white mb-3 text-center">
+        Next Steps
+      </h4>
       <p className="text-lg text-gray-300 mb-8 leading-relaxed text-center">
         Want to explore how your brand can be featured?
       </p>
 
       <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
         <Link
-          href="https://calendly.com/wali-waiters/30mincall?month=2025-04"
+          href="https://calendly.com/wali-waiters/30mincall"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-gradient-to-r from-blue-600 to-yellow-600 text-white font-semibold px-8 py-4 rounded-full hover:from-blue-700 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl mx-auto"

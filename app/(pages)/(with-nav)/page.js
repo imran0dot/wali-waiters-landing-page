@@ -1,6 +1,8 @@
 import Download from "../../../components/Dawonload";
 import {
   About,
+  BookBanner,
+  CapitalConsulting,
   Explore,
   GetStarted,
   Hero,
@@ -13,6 +15,12 @@ const Page = () => (
   <div>
     <div className="">
       <Hero />
+    </div>
+
+    {/* Transformational Truths — available now */}
+    <div className="relative">
+      <BookBanner />
+      <div className="gradient-03 z-0" />
     </div>
 
     <div className="relative">
@@ -38,6 +46,11 @@ const Page = () => (
       </div>
       <div className="gradient-04 z-0" />
       <WhatsNew />
+    </div>
+
+    <div className="relative">
+      <CapitalConsulting />
+      <div className="gradient-03 z-0" />
     </div>
   </div>
 );
