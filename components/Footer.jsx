@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { socials } from '../constants';
+import { CALENDLY_URL, socials } from '../constants';
 
 import styles from '../styles';
 import { footerVariants, textVariant } from '../utils/motion';
@@ -28,8 +28,10 @@ const Footer = () => (
             As a seasoned <strong>business consultant, executive producer, and author,</strong> I’ve helped countless small business owners, creators, and changemakers raise capital, scale their operations, and bring bold ideas to life—from consulting businesses to film and television projects.
           </motion.p>
         </div>
-        <Link href="https://calendly.com/wali-waiters/30mincall?month=2025-04"
-          type="button"
+        <Link
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px]"
         >
           <span className="font-normal text-[16px] text-white">Schedule Your Free Strategy Call Now!</span>

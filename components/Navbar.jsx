@@ -13,7 +13,7 @@ const Navigation = () => {
   const navItems = [
     { path: "/", name: "Home" },
     { path: "/speaker", name: "Speaker" },
-    { path: "/your-life-and-live-your-truth", name: "Order Book" },
+    { path: "/your-life-and-live-your-truth", name: "Transformational Truths" },
     { path: "/gallery", name: "Gallery" },
     { path: "/booking", name: "Booking" },
     { path: "/projects", name: "Projects" },
@@ -39,10 +39,10 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-6">
             {navItems.map((item) => (
               <Link href={item.path} key={item.name}>
-                <span className="cursor-pointer text-gray-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:to-yellow-400 transition duration-300 font-medium">
+                <span className="cursor-pointer whitespace-nowrap text-gray-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:to-yellow-400 transition duration-300 font-medium">
                   {item.name}
                 </span>
               </Link>
@@ -51,7 +51,9 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col justify-center items-center w-8 h-8 relative"
+            className="lg:hidden flex flex-col justify-center items-center w-8 h-8 relative"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
             onClick={() => setIsOpen(!isOpen)}
           >
             <span
@@ -76,7 +78,7 @@ const Navigation = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="md:hidden flex flex-col space-y-4 py-4"
+              className="lg:hidden flex flex-col space-y-4 py-4"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}

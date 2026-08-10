@@ -24,12 +24,20 @@ const Hero = () => (
         transition={{ duration: 0.8, delay: 0.8 }}
         className="backdrop-blur-sm bg-white/5 rounded-2xl border border-blue-500/20 p-8 mb-12 max-w-4xl mx-auto"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm font-medium text-blue-200 text-nowrap">
-          <div>BEST-SELLING AUTHOR</div>
-          <div>EXECUTIVE PRODUCER</div>
-          <div>TRANSFORMATIONAL SPEAKER</div>
-          <div>FOUNDING EDUCATOR</div>
-          <div>REAL-LIFE TRUTH TELLER</div>
+        {/* Flex-wrap keeps the final row centred — a 4-column grid left-aligned
+            the odd fifth credential on its own line. */}
+        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-sm font-medium text-blue-200">
+          {[
+            'BEST-SELLING AUTHOR',
+            'EXECUTIVE PRODUCER',
+            'TRANSFORMATIONAL SPEAKER',
+            'FOUNDING EDUCATOR',
+            'REAL-LIFE TRUTH TELLER',
+          ].map((credential) => (
+            <div key={credential} className="whitespace-nowrap">
+              {credential}
+            </div>
+          ))}
         </div>
       </motion.div>
 
@@ -43,7 +51,7 @@ const Hero = () => (
           BUILDING A LEGACY
         </h2>
         <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
-          Over 30+ years in media, leadership, and personal growth, captivating
+          Over 30 years in media, leadership, and personal growth, captivating
           & igniting audiences everywhere, from the conference room to the
           ballroom, stages to youth centers.
         </p>

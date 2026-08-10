@@ -29,8 +29,10 @@ const LeadMagnetForm = () => {
     const { name, email } = formData;
     if (!name || !email) {
       setError("Please fill out both fields.");
+      setLoading(false);
       return;
     }
+    setError("");
 
     try {
       await instance.post("/audiences/create", formData);
@@ -67,8 +69,8 @@ const LeadMagnetForm = () => {
                 5 STRATEGIES TO MONETIZE
               </h2>
               <p className="text-gray-400 text-base max-w-xl mx-auto">
-                Add that Create your Vision!! Tell your story! Elevate you
-                business/brand
+                Create your vision. Tell your story. Elevate your business and
+                brand.
               </p>
 
               <form

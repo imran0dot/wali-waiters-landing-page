@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 
 import Link from 'next/link';
+import { CALENDLY_URL } from '../constants';
 import styles from '../styles';
 import { TitleText } from '../components';
 import {
@@ -63,7 +64,9 @@ const WhatsNew = () => (
           Book Your FREE 30-Minute Strategy Call
         </motion.h2>
         <Link
-          href="https://calendly.com/wali-waiters/30mincall?month=2025-04"
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px] mt-5"
         >
           <span className="font-normal text-[16px] text-white">
