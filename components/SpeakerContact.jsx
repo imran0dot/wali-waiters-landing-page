@@ -40,13 +40,11 @@ const SpeakerContact = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 href="/booking"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="bg-gradient-to-r from-blue-600 to-yellow-600 text-white font-semibold px-8 py-4 rounded-full hover:from-blue-700 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Booking Now
+                Book Wali For Your Event
               </Link>
 
               <motion.div
@@ -59,7 +57,7 @@ const SpeakerContact = () => {
                   Now Booking
                 </div>
                 <div className="text-white font-bold text-xl">
-                  Transformative Tour
+                  Speaking Engagements
                 </div>
               </motion.div>
             </div>

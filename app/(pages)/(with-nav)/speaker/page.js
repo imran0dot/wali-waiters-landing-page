@@ -3,6 +3,8 @@
 "use client";
 
 import Hero from "../../../../sections/SpeakerHero";
+import SpeakerPhotos from "../../../../sections/SpeakerPhotos";
+import SpeakerReel from "../../../../sections/SpeakerReel";
 import SpeakerAbout from "../../../../sections/SpeakerAbout";
 import SpeakerExperience from "../../../../components/SpeakerExperience";
 import SpeakerTools from "../../../../components/SpeakerTools";
@@ -12,6 +14,12 @@ const Speaker = () => (
   <>
     {/* Hero Section  */}
     <Hero />
+    {/* Speaking photos — placed before any general/social event photos */}
+    <SpeakerPhotos />
+
+    {/* Speaker reel video */}
+    <SpeakerReel />
+
     {/* About Section  */}
     <SpeakerAbout />
     {/* Experience Section  */}

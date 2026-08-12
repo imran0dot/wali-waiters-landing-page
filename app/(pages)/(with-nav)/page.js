@@ -9,12 +9,19 @@ import {
   WhatsNew,
 } from "../../../sections";
 import ClientReview from "../../../sections/ClientReview";
+import SpeakerFeature from "../../../sections/SpeakerFeature";
 import Video from "../../../sections/Video";
 
 const Page = () => (
   <div>
     <div className="">
       <Hero />
+    </div>
+
+    {/* Speaker feature — links to the Speaker page */}
+    <div className="relative">
+      <SpeakerFeature />
+      <div className="gradient-03 z-0" />
     </div>
 
     {/* Transformational Truths — available now */}
