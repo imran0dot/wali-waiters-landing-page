@@ -29,24 +29,24 @@ const CapitalConsulting = () => (
         className="mt-8 text-xl sm:text-2xl font-semibold text-white"
       >
         Do you have an investor-ready film, television project, or business
-        seeking capital?
+        seeking capital, sponsorship, or strategic partners?
       </motion.p>
 
       <motion.p
         variants={fadeIn('up', 'tween', 0.3, 1)}
         className="mt-6 text-lg text-gray-300 leading-relaxed"
       >
-        Wali Waiters Consulting works with qualified projects that have a
-        professional pitch deck, clear funding request, financial projections,
-        experienced team, and organized supporting materials.
+        Wali Waiters Consulting works with qualified opportunities that have a
+        professional pitch deck, a clear funding request, financial projections,
+        an experienced team, and organized supporting materials.
       </motion.p>
 
       <motion.p
         variants={fadeIn('up', 'tween', 0.4, 1)}
         className="mt-4 text-base text-gray-400 leading-relaxed"
       >
-        Projects that require additional preparation may qualify for a separate
-        paid Capital-Readiness Engagement.
+        Projects that have strong potential but require additional preparation
+        may qualify for a separate paid Capital-Readiness Engagement.
       </motion.p>
 
       <motion.div variants={fadeIn('up', 'tween', 0.5, 1)} className="mt-10">

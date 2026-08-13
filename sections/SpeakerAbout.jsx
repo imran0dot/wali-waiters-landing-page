@@ -82,20 +82,18 @@ const SpeakerAbout = () => {
             </h3>
             <div className="text-center">
               <div className="text-3xl font-bold text-yellow-400 mb-4">
-                TRANSFORMATIVE TOUR
+                SPEAKING ENGAGEMENTS
               </div>
               <div className="text-xl font-semibold text-white mb-6">
                 KEYNOTES · WORKSHOPS · ASSEMBLIES
               </div>
               <Link
                 href="/booking"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-block bg-gradient-to-r from-yellow-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-full hover:from-yellow-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Booking Now
+                Book Wali For Your Event
               </Link>
             </div>
           </motion.div>
